@@ -2,11 +2,12 @@
 
 namespace TriangleCalculator
 {
-    class Program
+    public class TriangleCalculatorConsole
     {
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the triangle calculator.");
+            var calc = new TriangleCalculatorConsole();
             while (true) 
             {
                 Console.WriteLine("Please enter 3 triangle lengths (integer values) or anything else to quit the program.");
@@ -27,7 +28,7 @@ namespace TriangleCalculator
                     }
                 }
 
-                var type = GetTriangleType(sides[0], sides[1], sides[2]);
+                var type = calc.GetTriangleType(sides[0], sides[1], sides[2]);
                 Console.WriteLine("The triangle type you inputed was " + type);                
             }
 
@@ -40,7 +41,7 @@ namespace TriangleCalculator
         /// <param name="side2">second side length</param>
         /// <param name="side3">third side length</param>
         /// <returns>Type of triangle (Scalene, Isosceles, Equilateral) or error</returns>
-        public static string GetTriangleType(int side1, int side2, int side3)
+        public string GetTriangleType(int side1, int side2, int side3)
         {
             // error checking for invalid triangle lengths
             if (side1 <= 0 || side2 <= 0 || side3 <= 0)

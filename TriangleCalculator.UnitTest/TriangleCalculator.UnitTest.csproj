@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\TriangleCalculator\TriangleCalculator.csproj" />
+    <ProjectReference Include="..\TriangleCalculator\TriangleCalculator.Console.csproj" />
   </ItemGroup>
 
 </Project>
