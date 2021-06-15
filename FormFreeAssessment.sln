@@ -7,7 +7,23 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriangleCalculator.Console"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TriangleCalculator.UnitTest", "TriangleCalculator.UnitTest\TriangleCalculator.UnitTest.csproj", "{7DBC8F42-8F42-4134-A1E3-00E9988FFBE3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkedList.Console", "LinkedList.Console\LinkedList.Console.csproj", "{1211FF09-CDB5-43A6-97EB-E89D6788F68F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinkedList.Console", "LinkedList.Console\LinkedList.Console.csproj", "{1211FF09-CDB5-43A6-97EB-E89D6788F68F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Triangle", "Triangle", "{9B8A967C-7665-4474-ADD2-705A7583D20E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "LinkedList", "LinkedList", "{4030417C-1878-43C0-B654-B60D5D13385A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SQL", "SQL", "{B0D8A639-1BE0-4EFB-908B-74B1B24CEB54}"
+	ProjectSection(SolutionItems) = preProject
+		Query1.sql = Query1.sql
+		Query2.sql = Query2.sql
+		Query3.sql = Query3.sql
+		Query5.sql = Query5.sql
+		Query6.sql = Query6.sql
+		Question4.txt = Question4.txt
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Prime", "Prime", "{F4D9E6FE-AFBB-46FA-A190-4A32124A88D1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +46,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D4ECAAB4-4671-4C0A-B2C5-5EA5D4811C24} = {9B8A967C-7665-4474-ADD2-705A7583D20E}
+		{7DBC8F42-8F42-4134-A1E3-00E9988FFBE3} = {9B8A967C-7665-4474-ADD2-705A7583D20E}
+		{1211FF09-CDB5-43A6-97EB-E89D6788F68F} = {4030417C-1878-43C0-B654-B60D5D13385A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4D80F9A2-2051-4D51-A737-E332189CEAFD}

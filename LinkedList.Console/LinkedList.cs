@@ -15,11 +15,7 @@ namespace LinkedList
         public LinkedListNode Head { get; set; }
 
         #region helper values for searching for the list's 5th from the end element
-        private int searchValue1 { get; set; }
-        private int searchValue2 { get; set; }
-        private int searchValue3 { get; set; }
-        private int searchValue4 { get; set; }
-        private int searchValue5 { get; set; }
+        private int ListLength = 0;
         #endregion
 
         /// <summary>
@@ -33,6 +29,7 @@ namespace LinkedList
                 Next = null,
                 Value = startValue,
             };
+            ListLength++;
         }
 
         /// <summary>
@@ -54,6 +51,7 @@ namespace LinkedList
             {
                 currentNode = currentNode.Next;
             }
+            ListLength++;
         }
 
         /// <summary>
@@ -65,17 +63,16 @@ namespace LinkedList
         {
             // start with the current node as the current node
             var currentNode = Head;
-            int listLength = 0;
             // keep going until we hit the end
             while (currentNode.Next != null)
             {
                 // update how long this list is 
-                listLength++;
+                ListLength++;
                 // at the end we update our current node to the next node
                 currentNode = currentNode.Next;
             }
 
-            if (listLength < 5)
+            if (ListLength < 5)
             {
                 throw new Exception("The list does not have enough elements to search for the 5th value from the end. List only contains " + listLength + " elements");
             }

@@ -1,0 +1,29 @@
+4. If you had to create an index on these tables, which fields would you most
+likely index, and why?
+
+Whenever you are looking to add indexes to tables, the goal is to optimize fields that would be commonly searched against for retrieving data from the table
+
+Given our structures for the tables we have in this assignment
+
+Customers
+-id
+-name
+-address
+-phone_number
+-email
+
+Orders
+-id
+-customer_id
+-order_amount
+-order_address
+
+We can probably assume that Customers.id and Orders.id are both indexed by probably being the primary keys for the table. If they aren't indexed, they would be prime targets for indexing
+
+After taking care of the primary keys being indexed, we probably still want a few other fields of interest.
+
+First we'll talk about Orders. Orders has a foreign key back to Customers via customer_id. Since this will probably be looked up against frequently, we should assign an index to it.
+
+As for Customers, it mainly depends on the nature of the system. For example, if a person's login/identifier is something such as their phone_number or email, then I'd suggest adding an index to one of those fields
+
+However, as it currently stands there's no information to suggest that that is the case, so I would add an index to name since name is a commonly searched on field in most systems.
