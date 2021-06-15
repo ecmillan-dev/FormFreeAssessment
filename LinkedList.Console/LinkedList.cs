@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LinkedList
+namespace LinkedList.App
 {
     /// <summary>
     /// wrapper class for the linked list
@@ -82,7 +82,7 @@ namespace LinkedList
             // throw an exception if the list is too short
             if (Head == null)
             {
-                throw new Exception("The list does not have enough elements to search for the 5th value from the end. List is empty");
+                throw new TooFewItemsException("The list does not have enough elements to search for the 5th value from the end. List is empty");
             }
 
             // since we track the list length, we know what 5 back from the end is
@@ -103,7 +103,7 @@ namespace LinkedList
             // throw an error message if the list wasn't long enough
             if (ListLength < 5)
             {
-                throw new Exception("The list does not have enough elements to search for the 5th value from the end. List only contains " + ListLength + " elements");
+                throw new TooFewItemsException("The list does not have enough elements to search for the 5th value from the end. List only contains " + ListLength + " elements");
             }
 
             // we know that if we make it here the value in value1 should be the 5th from the end of the list

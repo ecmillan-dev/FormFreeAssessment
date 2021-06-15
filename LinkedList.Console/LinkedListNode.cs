@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace LinkedList
+namespace LinkedList.App
 {
     /// <summary>
     /// The int value node of the linked list

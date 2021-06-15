@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace LinkedList
+namespace LinkedList.App
 {
     public class LinkedListConsole
     {

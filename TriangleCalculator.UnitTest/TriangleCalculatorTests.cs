@@ -4,7 +4,7 @@ using TriangleCalculator.App.Service;
 
 namespace Triangle_triangleService
 {
-    public class Triangle_triangleServiceTests
+    public class Tests
     {
         private static ITriangle _triangleService;
         [SetUp]
