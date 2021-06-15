@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace PrimeFactor.Console
+namespace PrimeFactor.App
 {
     class Program
     {

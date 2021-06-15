@@ -1,13 +1,18 @@
 ﻿using System;
+using TriangleCalculator.App.Interface;
+using TriangleCalculator.App.Service;
 
-namespace TriangleCalculator
+namespace TriangleCalculator.App
 {
     public class TriangleCalculatorConsole
     {
+        private static ITriangle _triangleService;
         static void Main(string[] args)
         {
+            // init triangle service
+            _triangleService = new TriangleService();
             Console.WriteLine("Welcome to the triangle calculator.");
-            var calc = new TriangleCalculatorConsole();
+            
             while (true) 
             {
                 Console.WriteLine("Please enter 3 triangle lengths (integer values) or anything else to quit the program.");
@@ -28,41 +33,12 @@ namespace TriangleCalculator
                     }
                 }
 
-                var type = calc.GetTriangleType(sides[0], sides[1], sides[2]);
+                var type = _triangleService.GetTriangleType(sides[0], sides[1], sides[2]);
                 Console.WriteLine("The triangle type you inputed was " + type);                
             }
 
         }
 
-        /// <summary>
-        /// Determines the type of triangle based on the 3 input side lengths
-        /// </summary>
-        /// <param name="side1">first side length</param>
-        /// <param name="side2">second side length</param>
-        /// <param name="side3">third side length</param>
-        /// <returns>Type of triangle (Scalene, Isosceles, Equilateral) or error</returns>
-        public string GetTriangleType(int side1, int side2, int side3)
-        {
-            // error checking for invalid triangle lengths
-            if (side1 <= 0 || side2 <= 0 || side3 <= 0)
-            {
-                return "Invalid";
-            }
-            // begin logic to check equivalent sides, first has to be equilateral due to all 3 sides matching
-            if (side1 == side2 && side1 == side3)
-            {
-                return "Equilateral";
-            }
-            // since first check is all 3 equal, we just need 1 equal check to pass (2 are equal)
-            else if (side1 == side2 || side2 == side3 || side1 == side3)
-            {
-                return "Isosceles";
-            }
-            // since no sides match we can return scalene
-            else
-            {
-                return "Scalene";
-            }
-        }
+        
     }
 }

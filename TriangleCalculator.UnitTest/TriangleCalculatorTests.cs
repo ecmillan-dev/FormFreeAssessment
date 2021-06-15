@@ -1,14 +1,17 @@
 using NUnit.Framework;
-using TriangleCalculator;
+using TriangleCalculator.App.Interface;
+using TriangleCalculator.App.Service;
 
-namespace TriangleCalculator
+namespace Triangle_triangleService
 {
-    public class TriangleCalculatorTests
+    public class Triangle_triangleServiceTests
     {
+        private static ITriangle _triangleService;
         [SetUp]
         public void Setup()
         {
-            
+            // init triangle service
+            _triangleService = new TriangleService();
         }
 
         /// <summary>
@@ -18,14 +21,13 @@ namespace TriangleCalculator
         public void TestEquilaterial()
         {
             var type = "Equilateral";
-            var calculator = new TriangleCalculatorConsole();
             // a few different values as expected
-            Assert.AreEqual(type, calculator.GetTriangleType(1, 1, 1));
-            Assert.AreEqual(type, calculator.GetTriangleType(5, 5, 5));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(1, 1, 5));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, 5));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, 0));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, -1));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(1, 1, 1));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(5, 5, 5));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(1, 1, 5));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, 5));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, 0));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, -1));
         }
 
         /// <summary>
@@ -35,15 +37,14 @@ namespace TriangleCalculator
         public void TestIsosceles()
         {
             var type = "Isosceles";
-            var calculator = new TriangleCalculatorConsole();
             // a few different values as expected
-            Assert.AreEqual(type, calculator.GetTriangleType(1, 1, 2));
-            Assert.AreEqual(type, calculator.GetTriangleType(5, 3, 5));
-            Assert.AreEqual(type, calculator.GetTriangleType(4, 7, 7));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(6, 1, 5));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, 0));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, -1));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(1, 1, 2));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(5, 3, 5));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(4, 7, 7));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(6, 1, 5));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, 0));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, -1));
         }
 
         /// <summary>
@@ -53,30 +54,28 @@ namespace TriangleCalculator
         public void TestScalene()
         {
             var type = "Scalene";
-            var calculator = new TriangleCalculatorConsole();
-            Assert.AreEqual(type, calculator.GetTriangleType(1, 3, 2));
-            Assert.AreEqual(type, calculator.GetTriangleType(5, 3, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 3));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 3, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 3, 3));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, 0));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(3, 4, -1));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(1, 3, 2));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(5, 3, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 3));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 3, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 3, 3));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, 0));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(3, 4, -1));
         }
 
         [Test]
         public void TestInvalid()
         {
             var type = "Invalid";
-            var calculator = new TriangleCalculatorConsole();
-            Assert.AreEqual(type, calculator.GetTriangleType(0, 3, 2));
-            Assert.AreEqual(type, calculator.GetTriangleType(0, 0, 0));
-            Assert.AreEqual(type, calculator.GetTriangleType(0, 0, -1));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 3, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 4, 4));
-            Assert.AreNotEqual(type, calculator.GetTriangleType(4, 3, 5));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(0, 3, 2));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(0, 0, 0));
+            Assert.AreEqual(type, _triangleService.GetTriangleType(0, 0, -1));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 3, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 4, 4));
+            Assert.AreNotEqual(type, _triangleService.GetTriangleType(4, 3, 5));
         }
     }
 }
