@@ -16,7 +16,7 @@ namespace LinkedList.UnitTest
         [Test]
         public void Test10ItemsSimple()
         {
-            var list = new App.LinkedList<int>();
+            var list = new LinkedList<int>();
             // first one will be 10 values in the list
             for (int i = 1; i <= 10; i++)
             {
@@ -25,6 +25,16 @@ namespace LinkedList.UnitTest
             // we know the 5th value from the back is 6
             Assert.AreEqual(6, list.Get5thValueFromEnd());
             Assert.AreNotEqual(5, list.Get5thValueFromEnd());
+
+            // test out a string list
+            var list2 = new LinkedList<string>();
+            for (int i = 1; i <= 10; i++)
+            {
+                list2.AddValue("string " + i);
+            }
+
+            Assert.AreEqual("string 6", list2.Get5thValueFromEnd());
+            Assert.AreNotEqual("string 5", list2.Get5thValueFromEnd());
         }
 
         /// <summary>
