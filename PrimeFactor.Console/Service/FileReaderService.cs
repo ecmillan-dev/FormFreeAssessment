@@ -21,9 +21,9 @@ namespace PrimeFactor.App.Service
             {
                 inputLines = File.ReadAllLines(fileName);
             }
-            catch (FileNotFoundException ex)
+            catch (IOException)
             {
-                Console.WriteLine("Invalid file path specified - " + ex.FileName);
+                Console.WriteLine("Invalid file path specified - " + fileName);
                 throw;
             }
 
