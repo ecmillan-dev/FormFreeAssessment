@@ -7,28 +7,28 @@ namespace LinkedList.App
     /// <summary>
     /// wrapper class for the linked list
     /// </summary>
-    public class LinkedList
+    public class LinkedList<TSource>
     {
         /// <summary>
         /// the first node of the linked list
         /// </summary>
-        public LinkedListNode Head { get; set; }
+        public LinkedListNode<TSource> Head { get; set; }
 
         #region helper values for searching for the list's 5th from the end element
-        private int value1 { get; set; }
-        private int value2 { get; set; }
-        private int value3 { get; set; }
-        private int value4 { get; set; }
-        private int value5 { get; set; }
+        private TSource value1 { get; set; }
+        private TSource value2 { get; set; }
+        private TSource value3 { get; set; }
+        private TSource value4 { get; set; }
+        private TSource value5 { get; set; }
         #endregion
 
         /// <summary>
         /// constructor for an initial value
         /// </summary>
         /// <param name="startValue">head value</param>
-        public LinkedList(int startValue)
+        public LinkedList(TSource startValue)
         {
-            Head = new LinkedListNode()
+            Head = new LinkedListNode<TSource>()
             {
                 Next = null,
                 Value = startValue,
@@ -47,11 +47,11 @@ namespace LinkedList.App
         /// appends a value to the list
         /// </summary>
         ///  <param name="newValue">new value to add to the list</param>
-        public void AddValue(int newValue)
+        public void AddValue(TSource newValue)
         {
             if (Head == null)
             {
-                Head = new LinkedListNode()
+                Head = new LinkedListNode<TSource>()
                 {
                     Value = newValue,
                 };
@@ -63,7 +63,7 @@ namespace LinkedList.App
                 {
                     currentNode = currentNode.Next;
                 }
-                currentNode.Next = new LinkedListNode()
+                currentNode.Next = new LinkedListNode<TSource>()
                 {
                     Value = newValue,
                 };
@@ -76,7 +76,7 @@ namespace LinkedList.App
         /// </summary>
         /// <returns></returns>
         /// <throws>Exception if list is less than length of 5</throws>
-        public int Get5thValueFromEnd()
+        public TSource Get5thValueFromEnd()
         {
             var ListLength = 0;
             // throw an exception if the list is too short
@@ -117,7 +117,7 @@ namespace LinkedList.App
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
-        private void Get5thValueFromEndHelper(int value)
+        private void Get5thValueFromEndHelper(TSource value)
         {
             value1 = value2;
             value2 = value3;

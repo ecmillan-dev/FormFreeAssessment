@@ -16,7 +16,7 @@ namespace LinkedList.UnitTest
         [Test]
         public void Test10ItemsSimple()
         {
-            var list = new App.LinkedList();
+            var list = new App.LinkedList<int>();
             // first one will be 10 values in the list
             for (int i = 1; i <= 10; i++)
             {
@@ -33,7 +33,7 @@ namespace LinkedList.UnitTest
         [Test]
         public void Test3ItemsException()
         {
-            var list = new App.LinkedList();
+            var list = new App.LinkedList<int>();
             list.AddValue(5);
             list.AddValue(7);
 
@@ -50,7 +50,7 @@ namespace LinkedList.UnitTest
         [Test]
         public void Test5ManualItems()
         {
-            var list = new App.LinkedList();
+            var list = new App.LinkedList<int>();
             list.AddValue(3);
             list.AddValue(1);
             list.AddValue(78);

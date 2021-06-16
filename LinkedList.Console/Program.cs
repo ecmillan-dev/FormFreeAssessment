@@ -9,7 +9,7 @@ namespace LinkedList.App
             Console.WriteLine("Welcome to the linked list searcher. This program will traverse a linked list to find the 5th value from the end of the list");
             Console.WriteLine("We will seed various linked lists with different lengths to demonstrate functionality");
 
-            var list = new LinkedList();
+            var list = new LinkedList<int>();
             // first one will be 10 values in the list
             for (int i = 1; i <= 10; i++)
             {
