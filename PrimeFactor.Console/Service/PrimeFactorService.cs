@@ -15,6 +15,11 @@ namespace PrimeFactor.App.Service
         public string GetPrimeFactorList(int value)
         {
             var factorList = "";
+
+            if (value < 2)
+            {
+                throw new InvalidIntegerInputException("Value is less than the lowest possible prime factor of 2");
+            }
             
             // first process all factors of 2
             while (value % 2 == 0)

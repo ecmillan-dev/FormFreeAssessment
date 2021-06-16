@@ -90,6 +90,8 @@ namespace LinkedList.App
             // start with the current node as the current node
             var currentNode = Head;
             ListLength++;
+            // use the helper to "shuffle" values from the "back" of the list
+            Get5thValueFromEndHelper(currentNode.Value);
             // keep going until we hit the end
             while (currentNode.Next != null)
             {
