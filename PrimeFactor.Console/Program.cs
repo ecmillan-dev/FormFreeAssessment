@@ -15,7 +15,7 @@ namespace PrimeFactor.App
             _fileService = new FileReaderService();
             try
             {
-                var lines = _fileService.GetIntegerLinesFromInputFile(@"C:\Users\Chris\source\repos\ecmillan-dev\FormFreeAssessment\PrimeFactor.Console\input1.txt");
+                var lines = _fileService.GetIntegerLinesFromInputFile(@"input1.txt");
                 foreach (var line in lines)
                 {
                     Console.WriteLine(line + " factors - " + _primeFactorService.GetPrimeFactorList(line));

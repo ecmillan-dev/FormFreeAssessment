@@ -43,7 +43,7 @@ namespace PrimeFactor.UnitTest
         [Test]
         public void TestFileInputReading()
         {
-            var lines = _fileService.GetIntegerLinesFromInputFile(@"C:\Users\cmillan\Source\Repos\ecmillan-dev\FormFreeAssessment\PrimeFactor.Console\input1.txt").ToArray();
+            var lines = _fileService.GetIntegerLinesFromInputFile(@"input1.txt").ToArray();
             // compare each line with what we know should be there
             /*
              * 315
@@ -68,8 +68,7 @@ namespace PrimeFactor.UnitTest
         [Test]
         public void TestInvalidFileData()
         {
-            Assert.Catch<InvalidIntegerInputException>(delegate { _fileService.GetIntegerLinesFromInputFile(@"C:\Users\cmillan\Source\Repos\ecmillan-dev\FormFreeAssessment\PrimeFactor.Console\invalidinputline.txt"); });
-            Assert.Catch<InvalidIntegerInputException>(delegate { _fileService.GetIntegerLinesFromInputFile(@"‪C:\Users\cmillan\source\repos\ecmillan-dev\FormFreeAssessment\PrimeFactor.Console\lowervalue.txt"); });
+            Assert.Catch<InvalidIntegerInputException>(delegate { _fileService.GetIntegerLinesFromInputFile(@"invalidinputline.txt"); });
         }
 
         /// <summary>
